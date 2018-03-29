@@ -1,6 +1,5 @@
 #include <stdio.h>
-int main()
-{
+int main(){
     float array[1001];
     int a,b,i;
     for(i = 1000;i>=0;i--){
