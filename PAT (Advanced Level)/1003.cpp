@@ -19,9 +19,9 @@ int main() {
         scanf("%d%d%d", &a, &b, &c);
         e[a][b] = e[b][a] = c;//用e的两个下标表示两个城市
     }
-    dis[c1] = 0;
+    dis[c1] = 0;//dis[i]：从出发点到i结点最短路径的路径长度
     w[c1] = weight[c1];
-    num[c1] = 1;
+    num[c1] = 1;//num[i]：从出发点到i结点最短路径的条数
     for(int i = 0; i < n; i++) {
         int u = -1, minn = inf;
         for(int j = 0; j < n; j++) {
@@ -41,7 +41,7 @@ int main() {
                 } else if(dis[u] + e[u][v] == dis[v]) {
                     num[v] = num[v] + num[u];
                     if(w[u] + weight[v] > w[v])
-                        w[v] = w[u] + weight[v];
+                        w[v] = w[u] + weight[v];//w[i]：从出发点到i点救援队的数目之和
                 }
             }
         }
